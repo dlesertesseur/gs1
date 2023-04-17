@@ -1,0 +1,31 @@
+{
+  "button": {
+    "signIn": "Ingresar"
+  },
+  "label": {
+    "keepMeConnected": "Mantenerme conectado",
+    "email": "Correo electrónico",
+    "password": "Contraseña"
+  },
+  "placeholder": {
+    "email": "su.correo@mail.com",
+    "password": "Su contraseña"
+  },
+  "main": {
+    "title": "Bienvenido!"
+  },
+  "auth": {
+    "title": "Bienvenido!",
+    "doNotHaveAccount": "¿Aun no tiene una cuenta?",
+    "createAccount": "Crear una cuenta",
+    "forgotPassword": "Olvido su contraseña?"
+  },
+  "footer": {
+    "message": "© 2022 zeetrex All rights reserved."
+  },
+  "validation": {
+    "emailFormat": "Formato de correo electrónico incorrecto",
+    "passwordFormat": "Formato de contraseña incorrecto"
+  },
+  "errors":{"title":"Error"}
+}
