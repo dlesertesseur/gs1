@@ -4,31 +4,30 @@ import { login } from "../../api/auth.api";
 const initialState = {
   value: {
     user: {
-      userId: null,
+      id: null,
       email: null,
       token: null,
       photo: null,
       status: null,
+      info: null,
     },
+    loading: false,
   },
 };
 
-export const signIn = createAsyncThunk(
-  "auth/signIn",
-  async (parameters, asyncThunk) => {
-    try {
-      const res = await login({
-        email: parameters.email,
-        password: parameters.password,
-      });
+export const signIn = createAsyncThunk("auth/signIn", async (parameters, asyncThunk) => {
+  try {
+    const res = await login({
+      email: parameters.email,
+      password: parameters.password,
+    });
 
-      return res;
-    } catch (error) {
-      console.log("signIn createAsyncThunk -> error", error);
-      return rejectWithValue(error);
-    }
+    return res;
+  } catch (error) {
+    console.log("signIn createAsyncThunk -> error", error);
+    return rejectWithValue(error);
   }
-);
+});
 
 export const authSlice = createSlice({
   name: "auth",
@@ -61,7 +60,7 @@ export const authSlice = createSlice({
     });
 
     builder.addCase(signIn.fulfilled, (state, { payload }) => {
-      console.log("signIn.fulfilled ->", payload);
+      //console.log("signIn.fulfilled ->", payload);
       if (payload.error) {
         state.value.error = true;
         state.value.errorCode = payload.error;
@@ -81,9 +80,7 @@ export const authSlice = createSlice({
 
       state.value.authenticating = false;
       state.value.error = true;
-      state.value.errorMessage = payload
-        ? payload.error.message
-        : "NO ERROR DESCRIPTION";
+      state.value.errorMessage = payload ? payload.error.message : "NO ERROR DESCRIPTION";
     });
   },
 });

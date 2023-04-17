@@ -1,6 +1,7 @@
 {
   "button": {
-    "signIn": "Ingresar"
+    "signIn": "Ingresar",
+    "logOut": "Cerrar sesion"
   },
   "label": {
     "keepMeConnected": "Mantenerme conectado",

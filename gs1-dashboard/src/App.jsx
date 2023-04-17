@@ -3,7 +3,7 @@ import { MantineProvider, ColorSchemeProvider } from "@mantine/core";
 import { useSelector } from "react-redux";
 import { config } from "./config/Config";
 import "./i18n";
-import AppStack from "./routes/dashboard/AppStack";
+import AppFrame from "./components/AppFrame";
 import AuthStack from "./routes/auth/AuthStack";
 
 const conf = {};
@@ -30,9 +30,9 @@ function App() {
         withNormalizeCSS
       >
         {user.token ? (
-          <AppStack config={conf}/>
+          <AppFrame config={config} />
         ) : (
-          <AuthStack />
+          <AuthStack/>
         )}
       </MantineProvider>
     </ColorSchemeProvider>

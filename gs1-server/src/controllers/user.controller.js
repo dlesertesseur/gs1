@@ -16,12 +16,16 @@ const getAll = async (req, res) => {
 };
 
 const findById = async (req, res) => {
-  const pid = req.params.pid;
+  const uid = req.params.uid;
   try {
-    const user = await findUserById(pid);
-    res.send(user);
+    const user = await findUserById(uid);
+    if(!user){
+      res.status(404).send({ errorMessage: error.message });
+    }else{
+      res.send(user);
+    }
   } catch (error) {
-    res.status(404).send({ message: error.message });
+    res.status(500).send({ errorMessage: error.message });
   }
 };
 

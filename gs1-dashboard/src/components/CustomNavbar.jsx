@@ -16,7 +16,7 @@ const CustomNavbar = () => {
   const [departments, setDepartments] = useState(null);
   const theme = useMantineTheme();
 
-  const getColor = (color) => theme.colors[color][theme.colorScheme === "dark" ? 5 : 7];
+  //const getColor = (color) => theme.colors[color][theme.colorScheme === "dark" ? 5 : 7];
 
   const branchesSelector = () => {
     return (

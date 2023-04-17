@@ -15,7 +15,14 @@ const findByEmail = async (email) => {
 
 const findUserById = async (id) => {
   const user = await dao.findById(id);
-  return user;
+  const ret = {
+    id: user._id,
+    firstName: user.first_name,
+    lastName: user.last_name,
+    email: user.email,
+    role: user.role
+  }
+  return ret;
 };
 
 const updateUser = async (uid, user) => {

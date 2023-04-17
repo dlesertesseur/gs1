@@ -97,7 +97,7 @@ class UserDao {
 
   async findById(id) {
     try {
-      let ret = await this.collection.findById(id).populate("cart").lean();
+      let ret = await this.collection.findById(id).lean();
       return ret;
     } catch (error) {
       throw error;

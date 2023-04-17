@@ -1,6 +1,6 @@
 import { API } from "../config/Api";
 
-const findById = async (parameters) => {
+const findUserById = async (parameters) => {
   
     const requestOptions = {
       method: "GET",
@@ -16,14 +16,15 @@ const findById = async (parameters) => {
     const res = await fetch(url, requestOptions);
     const data = await res.json();
   
-    console.log("############ findById ->",data)
-
-    return {
-      user: parameters.email,
+    return ({
+      firstName: data.firstName,
+      lastName :data.lastName,
+      role: data.role,
       error: data.error,
+      email: data.email,
       errorMessage: data.errorMessage,
-    };
+    });
   };
 
 
-  export {findById}
+  export {findUserById}
