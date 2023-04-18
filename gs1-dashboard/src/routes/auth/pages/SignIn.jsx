@@ -22,7 +22,7 @@ import Logo from "../../../Components/Logo";
 export function SignIn() {
   const { t } = useTranslation();
   const { loading, error, errorMessage } = useSelector((state) => state.auth.value);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const form = useForm({

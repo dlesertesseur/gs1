@@ -1,0 +1,47 @@
+{
+  "panels":{
+    "associate":{
+      "title":"Panel de asociados",
+      "description":"Informacio consolidada y ordenaada para la toma de deciones y gestion."
+    },
+    "main":{
+      "title":"Panel principal",
+      "description":"Informacio consolidada y ordenaada para la toma de deciones y gestion.",
+      "KPI1":{
+        "title":"Asosiacos"
+      }
+    }
+  },
+  "button": {
+    "signIn": "Ingresar",
+    "logOut": "Cerrar sesion",
+    "back":"Volver"
+  },
+  "label": {
+    "keepMeConnected": "Mantenerme conectado",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "toPreviousMonth":"Respecto al mes anterior"
+  },
+  "placeholder": {
+    "email": "su.correo@mail.com",
+    "password": "Su contraseña"
+  },
+  "main": {
+    "title": "Bienvenido!"
+  },
+  "auth": {
+    "title": "Bienvenido!",
+    "doNotHaveAccount": "¿Aun no tiene una cuenta?",
+    "createAccount": "Crear una cuenta",
+    "forgotPassword": "Olvido su contraseña?"
+  },
+  "footer": {
+    "message": "© 2022 zeetrex All rights reserved."
+  },
+  "validation": {
+    "emailFormat": "Formato de correo electrónico incorrecto",
+    "passwordFormat": "Formato de contraseña incorrecto"
+  },
+  "errors":{"title":"Error"}
+}
