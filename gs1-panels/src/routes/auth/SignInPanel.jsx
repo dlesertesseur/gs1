@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { signIn } from "../../redux/Auth";
+import * as Yup from "yup";
 
 const SignInPanel = () => {
   const dispatch = useDispatch();
@@ -19,6 +20,17 @@ const SignInPanel = () => {
   const onClick = () => {
     dispatch(signIn({ email: email, password: password }));
   };
+
+  const validation = Yup.object({
+    email: Yup.string().email("Invalid email address").required("Required"),
+    password: Yup.string()
+      .required("Required")
+      .min(8, "Must be 8 characters or more")
+      .matches(/[a-z]+/, "One lowercase character")
+      .matches(/[A-Z]+/, "One uppercase character")
+      .matches(/[@$!%*#?&]+/, "One special character")
+      .matches(/\d+/, "One number")
+  })
 
   return (
     <div className="">
