@@ -1,37 +1,27 @@
 import React from "react";
 import { Card, Title, BarChart, Subtitle } from "@tremor/react";
 
-const chartdata = [
-  {
-    name: "Amphibians",
-    "Number of threatened species": 2488,
-  },
-  {
-    name: "Birds",
-    "Number of threatened species": 1445,
-  },
-  {
-    name: "Crustaceans",
-    "Number of threatened species": 743,
-  },
-];
-
 const dataFormatter = (number) => {
-    return "$ " + Intl.NumberFormat("us").format(number).toString();
-  };
+  return "$ " + Intl.NumberFormat("us").format(number).toString();
+};
 
-const BarChartCard = ({title="NO TITLE", subtitle="NO SUBTITLE"}) => {
+const BarChartCard = ({
+  data = [],
+  group = [],
+  title = "NO TITLE",
+  subtitle,
+}) => {
   return (
     <Card>
       <Title>{title}</Title>
-      <Subtitle>{subtitle}</Subtitle>
+      {subtitle ? <Subtitle>{subtitle}</Subtitle> : null}
       <BarChart
         className="mt-6"
-        data={chartdata}
-        index="name"
-        categories={["Number of threatened species"]}
+        data={data}
+        index={group[0]}
+        categories={group}
         colors={["blue"]}
-        valueFormatter={dataFormatter}
+        //valueFormatter={dataFormatter}
         yAxisWidth={48}
       />
     </Card>

@@ -1,27 +1,48 @@
 {
-  "panels":{
-    "associate":{
-      "title":"Panel de asociados",
-      "description":"Informacio consolidada y ordenaada para la toma de deciones y gestion."
+  "panels": {
+    "associate": {
+      "title": "Panel de asociados",
+      "description": "Informacio consolidada y ordenaada para la toma de deciones y gestion.",
+      "KPI1": {
+        "title": "TOTAL HOY"
+      },
+      "KPI2": {
+        "title": "ALTAS ANUALES PROMEDIO"
+      },
+      "KPI3": {
+        "title": "BAJAS ANUALES PROMEDIO"
+      },
+      "KPI4": {
+        "title": "EVOLUCION ANUAL",
+        "group": "socios"
+      },
+      "KPI5": {
+        "title": "POR INDUSTRIA",
+        "group": "industria"
+      },
+      "KPI6": {
+        "title": "NIVEL DE SATISFACCION (ATENCION)",
+        "group": "nivel"
+      }
     },
-    "main":{
-      "title":"Panel principal",
-      "description":"Informacio consolidada y ordenaada para la toma de deciones y gestion.",
-      "KPI1":{
-        "title":"Asosiacos"
+    "main": {
+      "title": "Panel principal",
+      "description": "Informacio consolidada y ordenaada para la toma de deciones y gestion.",
+      "KPI1": {
+        "title": "Asosiacos"
       }
     }
   },
   "button": {
     "signIn": "Ingresar",
     "logOut": "Cerrar sesion",
-    "back":"Volver"
+    "back": "Volver"
   },
   "label": {
     "keepMeConnected": "Mantenerme conectado",
     "email": "Correo electrónico",
     "password": "Contraseña",
-    "toPreviousMonth":"Respecto al mes anterior"
+    "toPreviousMonth": "Respecto al mes anterior"
   },
   "placeholder": {
     "email": "su.correo@mail.com",
@@ -43,5 +64,9 @@
     "emailFormat": "Formato de correo electrónico incorrecto",
     "passwordFormat": "Formato de contraseña incorrecto"
   },
-  "errors":{"title":"Error"}
+  "errors": {
+    "title": "Error",
+    "invalidEmail": "Formato de email invalido",
+    "required": "Campo requerido"
+  }
 }

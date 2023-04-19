@@ -4,6 +4,7 @@ import flash from "express-flash";
 import authRoute from "./routes/auth.route.js";
 import initializePassport from "./config/passport.config.js";
 import userRoute from "./routes/user.route.js";
+import panelsRoute from "./routes/panels.route.js";
 import cookieParser from "cookie-parser";
 import config from "./config/config.js";
 import cors from "cors";
@@ -25,6 +26,7 @@ app.use(passport.initialize());
 
 app.use("/api/gs1/v1/auth", authRoute);
 app.use("/api/gs1/v1/users", userRoute);
+app.use("/api/gs1/v1/panels", panelsRoute);
 
 //app.use('/', (req, res) => {res.redirect("/api/auth/login")});
 

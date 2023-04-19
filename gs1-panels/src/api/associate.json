@@ -1,0 +1,38 @@
+{
+  "name": "associates",
+  "lastUpdate": "2023/04/19 13:40",
+  "data": {
+    "total": 21039,
+    "averageAnnualIncome": 145,
+    "averageAnnualTerminations": 14,
+    "annualEvolution": [
+      { "year": 2012, "value": 10938 },
+      { "year": 2013, "value": 11584 },
+      { "year": 2014, "value": 12334 },
+      { "year": 2015, "value": 13876 },
+      { "year": 2016, "value": 14938 },
+      { "year": 2017, "value": 15767 },
+      { "year": 2018, "value": 16543 },
+      { "year": 2019, "value": 17674 },
+      { "year": 2020, "value": 17763 },
+      { "year": 2021, "value": 19765 },
+      { "year": 2022, "value": 20394 },
+      { "year": 2023, "value": 21039 }
+    ],
+    "byIndustry": [
+      { "industry": "SALUD", "value": 7 },
+      { "industry": "LOGISTICA Y TRANSPORTE", "value": 5 },
+      { "industry": "FINANZAS", "value": 4 },
+      { "industry": "RETAIL", "value": 60 },
+      { "industry": "FRESCOS", "value": 15 },
+      { "industry": "MODA Y CALZADO", "value": 13 }
+    ],
+    "satisfaction": [
+      { "level": "EXCELENTE", "value": 20 },
+      { "level": "MUY BUENO", "value": 60 },
+      { "level": "BUENO", "value": 10 },
+      { "level": "MALO", "value": 7 },
+      { "level": "MUY MALO", "value": 3 }
+    ]
+  }
+}

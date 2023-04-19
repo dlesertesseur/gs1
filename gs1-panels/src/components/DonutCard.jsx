@@ -1,50 +1,35 @@
 import React from "react";
 
-import { Card, Title, DonutChart, Subtitle } from "@tremor/react";
+import { Card, Title, DonutChart, Subtitle, Legend, Flex } from "@tremor/react";
 
-const cities = [
-  {
-    name: "New York",
-    sales: 9800,
-  },
-  {
-    name: "London",
-    sales: 4567,
-  },
-  {
-    name: "Hong Kong",
-    sales: 3908,
-  },
-  {
-    name: "San Francisco",
-    sales: 2400,
-  },
-  {
-    name: "Singapore",
-    sales: 1908,
-  },
-  {
-    name: "Zurich",
-    sales: 1398,
-  },
-];
-
-const valueFormatter = (number) =>
-  `$ ${Intl.NumberFormat("us").format(number).toString()}`;
-
-const DonutCard = ({title="NO TITLE", subtitle="NO SUBTITLE", variant}) => {
+const DonutCard = ({
+  title = "NO TITLE",
+  data = null,
+  group = null,
+  index = null,
+  colors = ["slate", "violet", "indigo", "rose", "cyan", "amber"],
+  subtitle,
+  variant,
+  categories,
+}) => {
   return (
     <Card className="max-w-lg">
       <Title>{title}</Title>
-      <Subtitle>{subtitle}</Subtitle>
+      {subtitle ? <Subtitle>{subtitle}</Subtitle> : null}
       <DonutChart
         variant={variant ? variant : "donut"}
         className="mt-6"
-        data={cities}
-        category="sales"
-        index="name"
-        valueFormatter={valueFormatter}
-        colors={["slate", "violet", "indigo", "rose", "cyan", "amber"]}
+        data={data}
+        index={index}
+        category={group}
+        colors={colors}
+      />
+      <Legend
+        className="mt-3"
+        categories={data.map((row) => {
+          return row.name;
+        })}
+        colors={colors}
       />
     </Card>
   );

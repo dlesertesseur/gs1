@@ -8,7 +8,7 @@ import { DIMENSION } from "../config/Constats";
 import { IconAlertCircle } from "@tabler/icons-react";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
-import { findUserById } from "../api/api.user";
+import { findUserById } from "../api/user.api.js";
 
 const AppFrame = ({ config }) => {
   const theme = useMantineTheme();
