@@ -10,7 +10,7 @@ const MainPanel = () => {
   };
   const { t } = useTranslation();
   return (
-      <div className="p-6 sm:p-10 h-screen w-screen">
+      <div className="p-6 sm:p-10 w-screen">
         <Title>{t("panels.main.title")}</Title>
         <Text>{t("panels.main.description")}</Text>
         <Grid numCols={1} numColsSm={2} numColsLg={3} className="gap-4 mt-6">

@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getPanelByName } from "../../api/panels.api";
+import BarListCard from "../../components/BarListCard";
 
 const AssociatePanel = () => {
   const { t } = useTranslation();
@@ -42,7 +43,7 @@ const AssociatePanel = () => {
     format = ret.data.satisfaction.map((row) => {
       const obj = {};
       obj["name"] = row.level;
-      obj[group] = row.value;
+      obj["value"] = row.value;
       return obj;
     });
     ret.data.satisfaction = format;
@@ -55,7 +56,7 @@ const AssociatePanel = () => {
   }, []);
 
   return (
-    <div className="bg-blue-100 p-6 sm:p-10 h-screen w-screen">
+    <div className="bg-blue-100 p-6 sm:p-10 w-screen">
       <Flex dir="row" alignItems="center" justifyContent="between">
         <div>
           <Title>{t("panels.associate.title")}</Title>
@@ -101,15 +102,21 @@ const AssociatePanel = () => {
             title={t("panels.associate.KPI5.title")}
             group={t("panels.associate.KPI5.group")}
             index={"name"}
-            data={panel ? panel.data.byIndustry:[]}
+            data={panel ? panel.data.byIndustry : []}
           />
           <div className="mt-4">
-            <DonutCard
+            {/* <DonutCard
               title={t("panels.associate.KPI6.title")}
               group={t("panels.associate.KPI6.group")}
               index={"name"}
               data={panel ? panel.data.satisfaction : []}
               variant={"pie"}
+            /> */}
+            <BarListCard
+              title={t("panels.associate.KPI6.title")}
+              entityText={"Nivel"}
+              valueText={"Valor"}
+              data={panel ? panel.data.satisfaction : []}
             />
           </div>
         </Col>
