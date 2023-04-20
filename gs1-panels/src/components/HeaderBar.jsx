@@ -1,20 +1,30 @@
+import { Bold, Button } from "@tremor/react";
 import React from "react";
+import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
+import { resetAuthData } from "../redux/Auth";
 
 const HeaderBar = () => {
+  const { t } = useTranslation();
+  const dispatch = useDispatch();
+
+  const onLogOut = () => {
+    dispatch(resetAuthData());
+  }
+  
   return (
-    <nav class="flex items-center justify-between flex-wrap bg-blue-500 p-6 w-screen sticky top-0 z-50">
-      <div class="flex items-center flex-shrink-0 text-white mr-6">
-        <span class="font-semibold text-xl tracking-tight">GS1</span>
+    <nav className="flex justify-between bg-gray-200 p-2 w-screen sticky top-0 z-50">
+      <div>
+        <img
+          className="mx-auto h-14 w-auto"
+          src="gs1-logo.png"
+          alt="gs1-log"
+        ></img>
       </div>
-      <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-        <div>
-          <a
-            href="#"
-            class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
-          >
-            Download
-          </a>
-        </div>
+      <div className="flex flex-wrap content-center">
+        <Button size="xs" onClick={onLogOut}>
+          <Bold>{t("button.logOut")}</Bold>
+        </Button>
       </div>
     </nav>
   );

@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 
 function App() {
   const { user } = useSelector((state) => state.auth.value);
+
   return (
     <div className="flex h-screen bg-slate-50">
       <div className="m-auto">
