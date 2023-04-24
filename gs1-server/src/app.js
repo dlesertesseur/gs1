@@ -11,7 +11,7 @@ import cors from "cors";
 
 const app = express();
 
-app.use(cors({ origin: "http://192.168.0.10:8080", credentials: true }));
+app.use(cors({ origin: config.CLIENT_URL, credentials: true }));
 app.use(flash());
 app.use(express.json());
 app.use(express.static("public"));

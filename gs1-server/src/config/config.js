@@ -6,6 +6,7 @@ const config = {
   MONGO_URL: process.env.MONGO_URL,
   DB_NAME: process.env.DB_NAME,
   SESSION_SECRET: process.env.SESSION_SECRET,
+  CLIENT_URL: process.env.CLIENT_URL,
 };
 
 export default config;
