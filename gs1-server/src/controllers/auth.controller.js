@@ -19,7 +19,10 @@ const login = async (req, res) => {
         .send({
           message: "User authenticated successfully",
           token: accessToken,
-          id:user._id
+          id:user._id,
+          fullName: user.first_name + " " + user.last_name,
+          role:user.role,
+          photo:user.photo
         });
     }
   } catch (error) {

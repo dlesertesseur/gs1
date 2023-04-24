@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { login } from "../../api/auth.api.js";
+import { findUserById } from "../../api/user.api.js";
 
 const initialState = {
   value: {
@@ -60,14 +61,16 @@ export const authSlice = createSlice({
     });
 
     builder.addCase(signIn.fulfilled, (state, { payload }) => {
-      //console.log("signIn.fulfilled ->", payload);
       if (payload.error) {
         state.value.error = true;
         state.value.errorCode = payload.error;
         state.value.errorMessage = payload.errorMessage;
       } else {
         state.value.user.token = payload.token;
-        state.value.user.email = payload.user;
+        state.value.user.email = payload.email;
+        state.value.user.fullName = payload.fullName;
+        state.value.user.role = payload.role;
+        state.value.user.photo = payload.photo;
         state.value.user.id = payload.id;
         state.value.error = false;
         state.value.errorMessage = null;
@@ -82,6 +85,7 @@ export const authSlice = createSlice({
       state.value.error = true;
       state.value.errorMessage = payload ? payload.error.message : "NO ERROR DESCRIPTION";
     });
+    
   },
 });
 

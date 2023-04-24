@@ -1,50 +1,48 @@
-import { Grid, Col, Card, Text, Metric, Title, Flex } from "@tremor/react";
+import TitleCard from "../../components/TitleCard";
+import { Grid, Col, Text, Title } from "@tremor/react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import TotalCard from "../../components/TotalCard";
 
 const MainPanel = () => {
   const navigate = useNavigate();
+  
   const onPress = () => {
     navigate("associates");
   };
+
+  const onPressDefault = () => {
+    navigate("default");
+  }
+
   const { t } = useTranslation();
   return (
-      <div className="p-6 sm:p-10 w-screen">
-        <Title>{t("panels.main.title")}</Title>
-        <Text>{t("panels.main.description")}</Text>
-        <Grid numCols={1} numColsSm={2} numColsLg={3} className="gap-4 mt-6">
-          <Col>
-            <TotalCard
-              title={t("panels.main.KPI1.title")}
-              deltaType="moderateIncrease"
-              delta={5}
-              metric={21039}
-              onPress={onPress}
-              color={"blue"}
-              decoration={"left"}
-            />
-          </Col>
-          <Card>
-            <Text>Title</Text>
-            <Metric>KPI 4</Metric>
-          </Card>
-          <Card>
-            <Text>Title</Text>
-            <Metric>KPI 5</Metric>
-          </Card>
-          <Col numColSpan={1} numColSpanLg={2}>
-            <Card>
-              <Text>Title</Text>
-              <Metric>KPI 1</Metric>
-            </Card>
-          </Col>
-          <Card>
-            <Text>Title</Text>
-            <Metric>KPI 2</Metric>
-          </Card>
-        </Grid>
-      </div>
+    <div className="p-6 sm:p-10 w-screen">
+      <Title>{t("panels.main.title")}</Title>
+      <Text>{t("panels.main.description")}</Text>
+      <Grid numCols={1} numColsSm={2} numColsLg={3} className="gap-4 mt-6">
+        <Col>
+          <TitleCard title={t("panels.main.section1.title")} onPress={onPress} color={"blue"} decoration={"left"} />
+        </Col>
+        <Col>
+          <TitleCard title={t("panels.main.section2.title")} onPress={onPressDefault} color={"red"} decoration={"left"} />
+        </Col>
+        <Col>
+          <TitleCard title={t("panels.main.section3.title")} onPress={onPressDefault} color={"green"} decoration={"left"} />
+        </Col>
+        <Col>
+          <TitleCard title={t("panels.main.section4.title")} onPress={onPressDefault} color={"yellow"} decoration={"left"} />
+        </Col>
+        <Col>
+          <TitleCard title={t("panels.main.section5.title")} onPress={onPressDefault} color={"teal"} decoration={"left"} />
+        </Col>
+        <Col>
+          <TitleCard title={t("panels.main.section6.title")} onPress={onPressDefault} color={"violet"} decoration={"left"} />
+        </Col>
+        <Col>
+          <TitleCard title={t("panels.main.section7.title")} onPress={onPressDefault} color={"lime"} decoration={"left"} />
+        </Col>
+      </Grid>
+    </div>
   );
 };
 

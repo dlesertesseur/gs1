@@ -30,7 +30,10 @@ const login = async (parameters) => {
   const data = await res.json();
 
   return {
-    user: parameters.email,
+    email: parameters.email,
+    fullName: data.fullName,
+    role:data.role, 
+    photo:data.photo,
     error: data.error,
     errorMessage: data.errorMessage,
     token: data.token,

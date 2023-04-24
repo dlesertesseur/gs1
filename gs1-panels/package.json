@@ -3,12 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "http://192.168.0.10/gs1",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fortawesome/pro-solid-svg-icons": "^6.4.0",
     "@heroicons/react": "^1.0.6",
     "@reduxjs/toolkit": "^1.9.5",
     "@tremor/react": "^2.1.0",

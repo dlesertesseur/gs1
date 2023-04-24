@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Bold,
   Button,
@@ -19,15 +19,22 @@ import * as Yup from "yup";
 
 const SignInPanel = () => {
   const dispatch = useDispatch();
-  const { t } = useTranslation();
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
   const [passError, setPassError] = useState(null);
   const [emailError, setEmailError] = useState(null);
-  const { loading, error, errorMessage } = useSelector(
+  const { user, loading, error, errorMessage } = useSelector(
     (state) => state.auth.value
   );
+
+  useEffect(() => {
+    if (user?.token) {
+      navigate("/menu");
+    }
+  }, [navigate, user]);
+
 
   const passVal = Yup.string().required(t("errors.required"));
   const emailVal = Yup.string()

@@ -1,5 +1,9 @@
 {
   "panels": {
+    "default": {
+      "title": "Panel defecto",
+      "description": "No implementado"
+    },
     "associate": {
       "title": "Panel de asociados",
       "description": "Informacio consolidada y ordenaada para la toma de deciones y gestion.",
@@ -21,16 +25,31 @@
         "group": "industria"
       },
       "KPI6": {
+        "title": "DISTRIBUCION DE INGRESOS",
+        "level": "Nivel",
+        "value": "Valor"
+      },
+      "KPI7": {
         "title": "NIVEL DE SATISFACCION (ATENCION)",
-        "group": "nivel"
+        "level": "Nivel",
+        "value": "Valor"
+      },
+      "KPI8": {
+        "title": "CATEGORIAS",
+        "level": "Nivel",
+        "value": "Valor"
       }
     },
     "main": {
       "title": "Panel principal",
       "description": "Informacio consolidada y ordenaada para la toma de deciones y gestion.",
-      "KPI1": {
-        "title": "Asosiacos"
-      }
+      "section1": {"title": "Asociados"},
+      "section2": {"title": "Identificación standard"},
+      "section3": {"title": "Servicios"},
+      "section4": {"title": "Consultoría"},
+      "section5": {"title": "Educacion"},
+      "section6": {"title": "Investigación"},
+      "section7": {"title": "Calidad de datos"}
     }
   },
   "button": {
@@ -68,5 +87,7 @@
     "title": "Error",
     "invalidEmail": "Formato de email invalido",
     "required": "Campo requerido"
-  }
+  },
+  "legend-1":"EL PODER DE LOS STANDARES",
+  "legend-2":"El lenguaje mundial de los negocios"
 }

@@ -2,7 +2,7 @@ import React from "react";
 import { Card, Title, BarChart, Subtitle } from "@tremor/react";
 
 const dataFormatter = (number) => {
-  return "$ " + Intl.NumberFormat("us").format(number).toString();
+  return number.toString();
 };
 
 const BarChartCard = ({
@@ -18,10 +18,10 @@ const BarChartCard = ({
       <BarChart
         className="mt-6"
         data={data}
-        index={group[0]}
+        index={"name"}
         categories={group}
         colors={["blue"]}
-        //valueFormatter={dataFormatter}
+        valueFormatter={dataFormatter}
         yAxisWidth={48}
       />
     </Card>

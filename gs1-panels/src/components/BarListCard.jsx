@@ -8,7 +8,7 @@ const dataFormatter = (number) => {
 
 const BarListCard = ({title="NO TITLE", entityText, valueText, data}) => {
   return (
-    <Card className="max-w-lg">
+    <Card className="w-full">
       <Title>{title}</Title>
       <Flex className="mt-4">
         <Text>
